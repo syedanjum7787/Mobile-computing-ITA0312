@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ParkEasy</title>
+<style>
+body{font-family:Arial;background:#eef8f6;color:#164b43;margin:0}
+header{background:#17695c;color:white;text-align:center;padding:22px}
+main{max-width:650px;margin:25px auto;padding:18px}
+.card{background:white;padding:20px;border-radius:14px;margin:15px 0}
+input,button{padding:12px;border-radius:8px;margin:5px 0}
+input{border:1px solid #ccc}
+button{background:#17816e;color:white;border:0;cursor:pointer}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.slot{padding:18px 5px;text-align:center;border-radius:8px;background:#d7f5df;color:#14532d;cursor:pointer}
+.booked{background:#ffd9d9;color:#8b2020}
+</style>
+</head>
+<body>
+<header><h1>ParkEasy</h1><p>Find and reserve your parking</p></header>
+<main>
+<section class="card">
+<h2>Login / Register</h2>
+<input id="user" placeholder="Your name">
+<button onclick="login()">Continue</button>
+<p id="welcome"></p>
+</section>
+<section class="card">
+<h2>Parking Availability</h2>
+<p>Total slots: 6</p>
+<p>Available: <b id="count">6</b></p>
+<p>Green = available · Red = occupied</p>
+<div class="slots" id="slots"></div>
+<p id="message">Select an available slot.</p>
+<button onclick="book()">Confirm Booking</button>
+<button onclick="cancelBooking()">Cancel My Booking</button>
+</section>
+</main>
+<script>
+let selected=null;
+let booked=JSON.parse(localStorage.getItem('parkedSlots')||'[]');
+function render(){
+const area=document.getElementById('slots');
+area.innerHTML='';
+for(let i=1;i<=6;i++){
+const b=booked.includes(i);
+const d=document.createElement('button');
+d.className='slot'+(b?' booked':'');
+d.textContent='Slot '+i+(b?' — Taken':' — Free');
+d.disabled=b;
+d.onclick=()=>{selected=i;document.getElementById('message').textContent='Selected Slot '+i;};
+area.appendChild(d);
+}
+document.getElementById('count').textContent=6-booked.length;
+}
+function login(){
+const n=document.getElementById('user').value.trim();
+if(!n){alert('Enter your name first.');return;}
+localStorage.setItem('parkUser',n);
+document.getElementById('welcome').textContent='Welcome, '+n+'!';
+}
+function book(){
+if(!localStorage.getItem('parkUser')){alert('Enter your name first.');return;}
+if(!selected){alert('Select an available slot.');return;}
+if(booked.includes(selected)){alert('That slot is already taken.');return;}
+booked.push(selected);
+localStorage.setItem('parkedSlots',JSON.stringify(booked));
+localStorage.setItem('myParkingSlot',String(selected));
+document.getElementById('message').textContent='Booking confirmed for Slot '+selected+' (demo).';
+selected=null;render();
+}
+function cancelBooking(){
+const mine=Number(localStorage.getItem('myParkingSlot'));
+if(!mine||!booked.includes(mine)){alert('No booking found for this browser.');return;}
+booked=booked.filter(x=>x!==mine);
+localStorage.setItem('parkedSlots',JSON.stringify(booked));
+localStorage.removeItem('myParkingSlot');
+document.getElementById('message').textContent='Your demo booking was cancelled.';
+render();
+}
+render();
+</script>
+</body>
+</html>
