@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Career - Job Assistant</title>
+<style>
+body{font-family:Arial;background:#f2f5fc;color:#182747;margin:0}
+header{background:#243b70;color:white;padding:22px;text-align:center}
+main{max-width:650px;margin:25px auto;padding:20px}
+.card{background:white;padding:20px;margin:15px 0;border-radius:14px;box-shadow:0 3px 12px #ddd}
+input,button{box-sizing:border-box;padding:12px;margin:6px 0;width:100%;border-radius:8px}
+input{border:1px solid #ccc}
+button{background:#315ac4;color:white;border:0;cursor:pointer}
+.job{border-top:1px solid #ddd;padding:12px 0}
+</style>
+</head>
+<body>
+<header><h1>Smart Career</h1><p>Your journey to the right job starts here</p></header>
+<main>
+<section class="card" id="account">
+<h2>Login / Register</h2>
+<input id="name" placeholder="Your full name">
+<input id="email" type="email" placeholder="Email address">
+<button onclick="login()">Continue</button>
+<p id="welcome"></p>
+</section>
+<section class="card">
+<h2>Personal Profile</h2>
+<input id="education" placeholder="Education">
+<input id="skills" placeholder="Skills (e.g. Java, Python)">
+<label>Upload resume: <input id="resume" type="file" accept=".pdf,.doc,.docx"></label>
+<p id="resumeStatus">No resume selected.</p>
+<button onclick="saveProfile()">Save Profile</button>
+<p id="profileStatus"></p>
+</section>
+<section class="card">
+<h2>Subscription</h2>
+<p>Free Plan — Browse sample job listings</p>
+<button onclick="alert('Free demo plan selected!')">Select Free Plan</button>
+<p>Premium plans can be added here.</p>
+</section>
+<section class="card">
+<h2>Recommended Jobs</h2>
+<div class="job"><b>Frontend Developer Intern</b><p>Web development · Entry level</p><button onclick="apply('Frontend Developer Intern')">Choose Job</button></div>
+<div class="job"><b>Python Developer Intern</b><p>Python · Entry level</p><button onclick="apply('Python Developer Intern')">Choose Job</button></div>
+<div class="job"><b>Data Analyst Intern</b><p>SQL and data analysis · Entry level</p><button onclick="apply('Data Analyst Intern')">Choose Job</button></div>
+<p id="jobStatus"></p>
+</section>
+</main>
+<script>
+function login(){
+const n=document.getElementById('name').value.trim();
+const e=document.getElementById('email').value.trim();
+if(!n||!e||!document.getElementById('email').checkValidity()){
+alert('Enter your name and a valid email.');return;
+}
+localStorage.setItem('careerName',n);
+document.getElementById('welcome').textContent='Welcome, '+n+'!';
+}
+document.getElementById('resume').addEventListener('change',function(){
+document.getElementById('resumeStatus').textContent=this.files.length?'Selected: '+this.files[0].name:'No resume selected.';
+});
+function saveProfile(){
+const data={education:document.getElementById('education').value,skills:document.getElementById('skills').value};
+localStorage.setItem('careerProfile',JSON.stringify(data));
+document.getElementById('profileStatus').textContent='Profile saved on this device.';
+}
+function apply(job){
+document.getElementById('jobStatus').textContent='You selected: '+job+'. Demo selection saved.';
+localStorage.setItem('selectedJob',job);
+}
+</script>
+</body>
+</html>
