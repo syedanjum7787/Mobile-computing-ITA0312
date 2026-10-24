@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FitLife</title>
+<style>
+body{font-family:Arial;background:#f7f3ff;color:#34235a;margin:0}
+header{background:#6441a5;color:white;padding:22px;text-align:center}
+main{max-width:650px;margin:25px auto;padding:18px}
+.card{background:white;padding:20px;margin:15px 0;border-radius:14px}
+input,button,select{padding:12px;margin:6px 0;border-radius:8px}
+input,select{border:1px solid #ccc}
+button{background:#7149bd;color:white;border:0;cursor:pointer}
+li{margin:10px 0}
+</style>
+</head>
+<body>
+<header><h1>FitLife</h1><p>Small steps. Stronger you.</p></header>
+<main>
+<section class="card">
+<h2>Login / Register</h2>
+<input id="name" placeholder="Your name">
+<input id="email" type="email" placeholder="Email address">
+<button onclick="login()">Continue</button>
+<p id="welcome"></p>
+</section>
+<section class="card">
+<h2>Fitness Blog</h2>
+<ul>
+<li>Warm up before every workout.</li>
+<li>Stay hydrated throughout the day.</li>
+<li>Include rest and recovery in your routine.</li>
+</ul>
+</section>
+<section class="card">
+<h2>Daily Diet Planner</h2>
+<label>Breakfast <input id="breakfast" placeholder="Oats, fruit, etc."></label><br>
+<label>Lunch <input id="lunch" placeholder="Your lunch plan"></label><br>
+<label>Dinner <input id="dinner" placeholder="Your dinner plan"></label><br>
+<button onclick="saveDiet()">Save Diet Plan</button>
+<p id="dietStatus"></p>
+</section>
+<section class="card">
+<h2>Fitness Videos</h2>
+<p>Choose a workout to explore:</p>
+<button onclick="video('Beginner Stretching')">Stretching</button>
+<button onclick="video('Full Body Workout')">Full Body</button>
+<button onclick="video('Yoga Session')">Yoga</button>
+<p id="videoStatus"></p>
+</section>
+<section class="card">
+<h2>Subscription</h2>
+<p>Free — Fitness tips and daily planning.</p>
+<p>Premium Demo — Additional workout plans.</p>
+<button onclick="subscribe()">Choose Premium Demo</button>
+<p id="paymentStatus"></p>
+</section>
+</main>
+<script>
+function login(){
+const n=document.getElementById('name').value.trim();
+const e=document.getElementById('email').value.trim();
+if(!n||!document.getElementById('email').checkValidity()){alert('Enter your name and a valid email.');return;}
+localStorage.setItem('fitUser',n);
+document.getElementById('welcome').textContent='Welcome, '+n+'!';
+}
+function saveDiet(){
+const d={breakfast:breakfast.value,lunch:lunch.value,dinner:dinner.value};
+localStorage.setItem('fitDiet',JSON.stringify(d));
+document.getElementById('dietStatus').textContent='Your diet plan has been saved on this device.';
+}
+function video(v){
+document.getElementById('videoStatus').textContent=v+' selected. This demo does not stream a video.';
+}
+function subscribe(){
+if(!localStorage.getItem('fitUser')){alert('Please enter your name and email first.');return;}
+document.getElementById('paymentStatus').textContent='Premium demo selected. No real payment was taken.';
+localStorage.setItem('fitSubscription','Premium Demo');
+}
+</script>
+</body>
+</html>
