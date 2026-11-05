@@ -1,0 +1,9 @@
+scenario,scheme,channels,requests,blocked,blocking_percent,nominal_utilization_percent,effective_utilization_percent,wasted_capacity_percent
+Voice,FDMA,74,5000,2683,53.66,46.34,46.34,0.0
+Voice,TDMA,78,5000,2577,51.54,48.46,48.46,0.0
+Bursty Data,FDMA,74,5000,2768,55.36,44.64,4.464,90.0
+Bursty Data,TDMA,78,5000,2647,52.94,47.06,4.706,90.0
+70/30 Mix,FDMA,74,5000,2747,54.94,45.06,32.8938,27.0
+70/30 Mix,TDMA,78,5000,2644,52.88,47.12,34.3976,27.0
+Flash Telemetry,FDMA,74,5000,1300,26.0,13.935241959482386,13.935241959482386,0.0
+Flash Telemetry,TDMA,78,5000,1100,22.0,13.935241959482385,13.935241959482385,0.0

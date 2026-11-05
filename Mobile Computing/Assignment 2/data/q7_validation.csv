@@ -1,0 +1,3 @@
+scheme,realization,sum_throughput,jain_fairness,min_user_rate,p5_user_rate,starved_users_percent,min_subcarriers,max_subcarriers
+Best-Subcarrier,499.5,424.76487535423513,0.14048122716200262,0.0,0.0,69.75,0.0,58.47
+QC-PF,499.5,198.83190955839274,0.4533625190794878,2.5665235397733848,3.0247130971369933,0.0,5.465,11.255

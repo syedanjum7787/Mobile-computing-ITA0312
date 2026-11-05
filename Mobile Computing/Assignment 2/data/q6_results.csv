@@ -1,0 +1,21 @@
+scenario,scheme,weighted_score
+Cellular Voice,SDMA,6.45
+Cellular Voice,TDMA,6.7
+Cellular Voice,FDMA,6.5
+Cellular Voice,CDMA,6.949999999999999
+Cellular Voice,OFDMA,7.8999999999999995
+Tactical Link,SDMA,6.300000000000001
+Tactical Link,TDMA,7.2
+Tactical Link,FDMA,6.5
+Tactical Link,CDMA,7.449999999999999
+Tactical Link,OFDMA,7.5
+Stadium Downlink,SDMA,6.65
+Stadium Downlink,TDMA,6.3
+Stadium Downlink,FDMA,6.199999999999999
+Stadium Downlink,CDMA,7.35
+Stadium Downlink,OFDMA,8.5
+5000 Sensors,SDMA,6.15
+5000 Sensors,TDMA,7.05
+5000 Sensors,FDMA,7.199999999999999
+5000 Sensors,CDMA,6.3500000000000005
+5000 Sensors,OFDMA,7.25
