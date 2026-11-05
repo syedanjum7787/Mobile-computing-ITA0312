@@ -1,0 +1,3 @@
+stage,source,destination,route,hops
+before_failure,A,D,A-B-C-D,3
+after_repair,A,D,A-B-E-D,3

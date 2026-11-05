@@ -1,0 +1,7 @@
+step,event,source,destination,details
+1,RREQ,A,D,broadcast conceptual discovery
+2,RREP,D,A,A-B-C-D
+3,LINK_BREAK,C,D,C–D link down
+4,RERR,C,A,invalidate route using C–D
+5,RREQ,A,D,new conceptual discovery
+6,RREP,D,A,A-B-E-D

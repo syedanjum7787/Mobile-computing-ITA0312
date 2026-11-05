@@ -1,0 +1,11 @@
+parameter,planned_setting,status
+scenario,flood disaster emergency ad hoc network,PLANNED
+nodes,20–50 rescue nodes,PLANNED
+gateways,2 gateway nodes,PLANNED
+mobility,"random waypoint, low/medium/high speed; exact speeds not supplied",TO_SPECIFY
+flows,CBR voice-like flows to command centre; traffic parameters not supplied,TO_SPECIFY
+routing,AODV vs DSDV (DSDV support to be independently verified in chosen simulator),PLANNED
+Mobile IP,HA/FA gateway handling requires an actual compatible implementation,TO_IMPLEMENT
+failures,inject link and gateway failures; event times not supplied,TO_SPECIFY
+metrics,mean end-to-end delay; PDR; control packet overhead,PLANNED
+experimental results,none provided in original PDF,NOT_MEASURED

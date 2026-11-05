@@ -1,12 +1,3 @@
-# Mobile Computing – Assignment 3
+# Assignment 3 CSV data
 
-Course: ITA0312 | CO3
-
-Python simulations and supporting materials for Q1–Q7.
-
-- data/: Generated CSV results
-- figures/: Generated PNG graphs
-- simulations/: Python simulation script
-
-Note: Q7 NS-3 results are a template only.
-No NS-3 experiment has been claimed.
+Contains reproducible Python **illustrations** and qualitative tables. `q7_ns3_experimental_results_TEMPLATE.csv` deliberately leaves measured metrics blank; it is **not NS-2/NS-3 data**. Refer to the main README for assumptions and limitations.
