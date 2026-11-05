@@ -1,0 +1,9 @@
+parameter,cellular,ad_hoc
+Infrastructure,Base stations + core,None required
+Control,Centralised,Distributed
+Topology,Cellular coverage,Dynamic multi-hop
+Routing,Core-network routed,Nodes route via DSDV / AODV
+Mobility,Handoff,Route repair/discovery
+Disaster resilience,Depends on infrastructure,Locally self-forming
+Security,Central authentication,Distributed security needed
+Power,Single-hop MS transmission,Nodes relay for others

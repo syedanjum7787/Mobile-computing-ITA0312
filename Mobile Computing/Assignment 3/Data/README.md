@@ -1,7 +1,3 @@
-# Assignment 3 – Data
+# Assignment 3 CSV data
 
-This folder contains 13 CSV files generated
-using Python simulations for Questions 1–7.
-
-Note: Q7 NS-3 experimental results are
-a template, not actual NS-3 measurements.
+Contains reproducible Python **illustrations** and qualitative tables. `q7_ns3_experimental_results_TEMPLATE.csv` deliberately leaves measured metrics blank; it is **not NS-2/NS-3 data**. Refer to the main README for assumptions and limitations.
