@@ -1,8 +1,0 @@
-component_or_requirement,role_or_design_target
-Ambulance router,Mobile node; patient monitor/camera behind router
-Visited cellular gateway,Foreign Agent / care-of address
-Hospital gateway,Home Agent / binding table
-Hospital server,Correspondent Node / physician endpoint
-Delay,"About 150 ms one-way interactive media DESIGN TARGET, not verified"
-Security,"Authenticated registration, IPsec/VPN, encryption"
-Resilience,Backup HA and second-operator fallback

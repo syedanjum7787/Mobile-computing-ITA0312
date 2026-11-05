@@ -1,7 +1,0 @@
-speed_scenario,protocol,mean_delay_ms,packet_delivery_ratio_percent,routing_control_packets_per_delivered_data_packet,source,status
-Low,AODV,,,,NS-2/NS-3 experiment required,NOT_MEASURED
-Low,DSDV,,,,NS-2/NS-3 experiment required,NOT_MEASURED
-Medium,AODV,,,,NS-2/NS-3 experiment required,NOT_MEASURED
-Medium,DSDV,,,,NS-2/NS-3 experiment required,NOT_MEASURED
-High,AODV,,,,NS-2/NS-3 experiment required,NOT_MEASURED
-High,DSDV,,,,NS-2/NS-3 experiment required,NOT_MEASURED

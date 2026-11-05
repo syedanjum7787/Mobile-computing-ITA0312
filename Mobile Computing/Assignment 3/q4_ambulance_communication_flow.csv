@@ -1,8 +1,0 @@
-step,from,to
-1,Ambulance MN,FA
-2,FA,HA
-3,HA,FA
-4,FA,Ambulance MN
-5,Hospital CN,HA
-6,HA,FA
-7,FA,Ambulance MN

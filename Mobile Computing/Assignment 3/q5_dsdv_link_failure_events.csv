@@ -1,4 +1,0 @@
-stage,source,destination,next_hop,metric,destination_sequence,status
-before,B,D,C,2,100,valid
-broken-link advertisement,B,D,C,INF,101,invalid
-after higher-seq update,B,D,E,2,102,valid
